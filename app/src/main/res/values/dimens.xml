@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardRadius">@dimen/_5sdp</dimen>
+    <dimen name="cardElevation">0dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="scanPadding">16dp</dimen>
+    <dimen name="polygonViewCircleWidth">32dp</dimen>
+    <dimen name="polygonViewStrokeWidth">2dp</dimen>
+    <!-- ScanPadding must be half of polygonViewCircleWidth -->
+
+    <dimen name="bottom_bar_padding">15dp</dimen>
+
+
+<!--    extra-->
+    <dimen name="activityPadding">16dp</dimen>
+    <dimen name="placeholderImage">60dp</dimen>
+    <dimen name="placeholderTextHeight">8dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="banner_height">60dp</dimen>
+    <dimen name="banner_ad_height">@dimen/_58sdp</dimen>
+</resources>

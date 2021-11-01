@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "259801012791",
+    "project_id": "doc-reader---pdf-reader",
+    "storage_bucket": "doc-reader---pdf-reader.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259801012791:android:a1b34f4370fbb14b203db2",
+        "android_client_info": {
+          "package_name": "itech.pdfreader.documentreader.alldocumentreader.filereader.officereader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259801012791-64n436v5hobelgn75dp50n7j4udhu3je.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtndV-G0tZeKCgiYDa3Dym8mmwuiAqXxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259801012791-64n436v5hobelgn75dp50n7j4udhu3je.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259801012791:android:7922074cf3eee133203db2",
+        "android_client_info": {
+          "package_name": "itech.pdfreader.editor.creator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259801012791-64n436v5hobelgn75dp50n7j4udhu3je.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtndV-G0tZeKCgiYDa3Dym8mmwuiAqXxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259801012791-64n436v5hobelgn75dp50n7j4udhu3je.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

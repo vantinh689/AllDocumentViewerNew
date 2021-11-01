@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="docModel"
+            type="itech.pdfreader.documentreader.alldocumentreader.filereader.officereader.models.DataModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        tools:context=".ui.activities.ViewerActivity">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/viewer_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+<!--        <com.facebook.shimmer.ShimmerFrameLayout-->
+<!--            android:id="@+id/shimmer_view_container"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_marginEnd="@dimen/_5sdp"-->
+<!--            android:layout_marginStart="@dimen/_5sdp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/adLayout"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@id/adLayout">-->
+<!--            <include layout="@layout/shimer_layout_recycler_native" />-->
+<!--        </com.facebook.shimmer.ShimmerFrameLayout>-->
+<!--        <FrameLayout-->
+<!--            android:id="@+id/adLayout"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="@dimen/_60sdp"-->
+<!--            android:visibility="gone"-->
+<!--            android:layout_marginEnd="@dimen/_5sdp"-->
+<!--            android:layout_marginStart="@dimen/_5sdp"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/header"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/adLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layoutAnimation="@anim/layout_animation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header" />
+
+        <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/pdfView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adLayout" />
+
+
+        <TextView
+            android:id="@+id/pageNoTv"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:background="@drawable/empty_bg_btn_4"
+            android:gravity="center"
+            android:text="@string/page_1_80"
+            android:visibility="visible"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_35sdp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/pdfNameL"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="@dimen/_23sdp"-->
+<!--            android:layout_marginStart="@dimen/_10sdp"-->
+<!--            android:layout_marginEnd="@dimen/_10sdp"-->
+<!--            android:layout_marginTop="@dimen/_20sdp"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/pdfView"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/pdfView"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/adLayout">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/pdfNameTv"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="@dimen/_23sdp"-->
+<!--                android:background="@drawable/empty_bg_btn_4"-->
+<!--                android:gravity="center"-->
+<!--                android:lines="1"-->
+<!--                android:marqueeRepeatLimit="marquee_forever"-->
+<!--                android:paddingStart="@dimen/_15sdp"-->
+<!--                android:paddingEnd="@dimen/_15sdp"-->
+<!--                android:text="@{docModel.name}"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textStyle="bold"-->
+<!--                android:visibility="visible"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.85" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/addSignatureBtnView"
+            android:layout_width="0dp"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/layoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:background="@drawable/empty_top_curved_bg_btn"
+                android:elevation="@dimen/_10sdp"
+                android:visibility="visible">
+
+                <Button
+                    android:id="@+id/addSignatureBtn"
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    android:background="@drawable/empty_bg_btn_4"
+                    android:text="@string/add_signature"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.32" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

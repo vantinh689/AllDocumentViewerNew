@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="docName" type="String" />
+        <variable name="pgNo" type="String" />
+        <variable name="totalNoOfPages" type="String" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        tools:context=".ui.activities.PageByPageViewActivity">
+        <include
+            android:id="@+id/header"
+            layout="@layout/editor_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@id/adLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/adLayout">
+            <include layout="@layout/shimer_layout_recycler_native_old" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+        <FrameLayout
+            android:id="@+id/adLayout"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_60sdp"
+            android:visibility="gone"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layoutDirection="inherit"
+            android:orientation="horizontal"
+            android:background="@color/dark_background"
+            app:layout_constraintBottom_toTopOf="@+id/bottomView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adLayout" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/primaryColor"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/bottomView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header" />
+        <TextView
+            android:id="@+id/pageNoTv"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:background="@drawable/empty_bg_btn_4"
+            android:gravity="center"
+            android:text="@{`Page `+pgNo+`/`+totalNoOfPages}"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/viewPager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pdfNameL"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_23sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adLayout">
+            <TextView
+                android:id="@+id/pdfNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_23sdp"
+                android:background="@drawable/empty_bg_btn_4"
+                android:gravity="center"
+                android:lines="1"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:text="@{docName}"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bottomView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_50sdp"
+            android:visibility="visible"
+            app:cardElevation="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <LinearLayout
+                style="@style/layoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/empty_top_curved_bg_btn"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+                <TextView
+                    android:id="@+id/cropBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ripple"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:lines="1"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    android:text="@string/crop"
+                    app:drawableTopCompat="@drawable/ic__crop_editor" />
+                <TextView
+                    android:id="@+id/calenderBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ripple"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:textSize="@dimen/_10ssp"
+                    android:lines="1"
+                    android:textColor="@color/primaryColor"
+                    android:textStyle="bold"
+                    android:text="@string/calendar"
+                    app:drawableTopCompat="@drawable/ic_calendar_alt_editor" />
+                <TextView
+                    android:id="@+id/textBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ripple"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:lines="1"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primaryColor"
+                    android:text="@string/text"
+                    app:drawableTopCompat="@drawable/ic_text_fields_editor" />
+                <TextView
+                    android:id="@+id/addSignatureBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ripple"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:lines="1"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    android:text="@string/add_signature"
+                    app:drawableTopCompat="@drawable/ic_signature_editor" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="itech.pdfreader.documentreader.alldocumentreader.filereader.officereader.ui.fragments.bottomnavigation.DashboardFragment"
+        android:label="fragment_headphone"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_documentsFragment"
+            app:destination="@id/documentsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/documentsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_navigation_home_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/searchFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/documentsFragment"
+        android:name="itech.pdfreader.documentreader.alldocumentreader.filereader.officereader.ui.fragments.DocumentsFragment"
+        android:label="DocumentsFragment"
+        tools:layout="@layout/fragment_documents" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="itech.pdfreader.documentreader.alldocumentreader.filereader.officereader.ui.fragments.bottomnavigation.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="itech.pdfreader.documentreader.alldocumentreader.filereader.officereader.ui.fragments.bottomnavigation.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings"/>
+
+
+</navigation>

@@ -1,0 +1,90 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.PdfReader" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="android:screenOrientation">portrait</item>
+        <item name="colorPrimary">@color/dark_background</item>
+        <item name="colorPrimaryVariant">@color/primaryColor</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/textColorDark</item>
+        <item name="fontFamily">@font/open_sans_regular</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/dark_background</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowDisablePreview">true</item>
+
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+
+        <!-- Customize your theme here. -->
+        <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
+        <item name="materialCalendarFullscreenTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen</item>
+        <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat.DayNight">
+        <item name="colorControlNormal">@color/darkGray</item>
+        <item name="colorControlActivated">@color/primaryColor</item>
+    </style>
+
+    <style name="layoutStyle">
+        <item name="android:backgroundTint">@color/cardview_dark_background</item>
+    </style>
+
+    <style name="layoutStyleSecond">
+        <item name="android:backgroundTint">@color/textColorLight</item>
+    </style>
+    <style name="cardLayoutStyleSecond">
+        <item name="cardBackgroundColor">@color/textColorLight</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="svgDrawableStyle">
+        <item name="android:tint">@color/textColorDark</item>
+    </style>
+
+    <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/textColorDark</item>
+        <item name="tabIndicatorColor">@color/textColorDark</item>
+        <item name="android:singleLine">true</item>
+        <item name="textAllCaps">false</item>
+    </style>
+    <style name="MyCustomTabTextAppearance2" parent="TextAppearance.Design.Tab">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/textColorDark</item>
+        <item name="tabIndicatorColor">@color/textColorDark</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+    </style>
+
+    <style name="listItemStyle" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="backgroundTint">@color/white</item>
+        <item name="background">@drawable/empty_bg_btn</item>
+    </style>
+
+    <style name="PauseDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+    </style>
+
+    <style name="PauseDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fadein</item>
+        <item name="android:windowExitAnimation">@anim/fadeout</item>
+    </style>
+
+</resources>

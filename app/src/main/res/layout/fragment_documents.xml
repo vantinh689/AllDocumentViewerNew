@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.DocumentsFragment">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/editor_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_27sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:background="@drawable/empty_bg_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/layoutStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <TextView
+                android:id="@+id/pdfTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Pdf"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:gravity="center"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="#e02626"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:background="@drawable/empty_bg_btn"
+                android:backgroundTint="@color/colorTool2"
+                android:drawablePadding="@dimen/_5sdp"
+                app:drawableLeftCompat="@drawable/pdf_ic" />
+
+            <TextView
+                android:id="@+id/wordTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Word"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:gravity="center"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="#1565c0"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:background="@drawable/empty_bg_btn"
+                android:backgroundTint="@color/colorTool3"
+                android:drawablePadding="@dimen/_5sdp"
+                app:drawableLeftCompat="@drawable/word_ic" />
+            <TextView
+                android:id="@+id/pptTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Ppt"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:gravity="center"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="#ef6c00"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:background="@drawable/empty_bg_btn"
+                android:backgroundTint="@color/colorTool4"
+                android:drawablePadding="@dimen/_5sdp"
+                app:drawableLeftCompat="@drawable/ppt_ic" />
+            <TextView
+                android:id="@+id/excelTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Excel"
+                android:singleLine="true"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:gravity="center"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="#2e7d32"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:background="@drawable/empty_bg_btn"
+                android:backgroundTint="@color/colorTool5"
+                android:drawablePadding="@dimen/_5sdp"
+                app:drawableLeftCompat="@drawable/excel_ic" />
+
+        </LinearLayout>
+
+
+        <include
+            android:id="@+id/searchLayout"
+            layout="@layout/search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layoutAnimation="@anim/layout_animation"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchLayout" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/primaryColor"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchLayout" />
+
+        <include
+            android:id="@+id/noDataFoundLayout"
+            layout="@layout/no_data_found_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="docModel"
+            type="itech.pdfreader.documentreader.alldocumentreader.filereader.officereader.models.DataModel" />
+        <variable
+            name="position"
+            type="String" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/cardElevation"
+        setListItemCardViewBackground="@{docModel.name.toLowerCase()}"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/cardRadius">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_55sdp"
+            android:background="@drawable/ripple"
+            android:padding="@dimen/_5sdp">
+
+            <ImageView
+                android:id="@+id/pdfImgView"
+                setListItemimageSrc="@{docModel.name.toLowerCase()}"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:contentDescription="@string/image"
+                android:src="@drawable/ic_pdf_file"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pdfTxt"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:singleLine="true"
+                android:text="@{docModel.name}"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                android:ellipsize="marquee"
+                app:layout_constraintBottom_toTopOf="@+id/pdfSizeTxt"
+                app:layout_constraintEnd_toStartOf="@+id/isLockBtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/pdfImgView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pdfSizeTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{``+docModel.type.toUpperCase()+` | `+docModel.lastModifiedTime+` | `+docModel.size}"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/pdfTxt"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/pdfTxt"
+                app:layout_constraintTop_toBottomOf="@+id/pdfTxt" />
+
+            <ImageView
+                android:id="@+id/isLockBtn"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/ripple"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_lock"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bookmarkBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lockImageSrc="@{docModel.lock}" />
+
+            <ImageView
+                android:id="@+id/bookmarkBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/ripple"
+                android:padding="@dimen/_5sdp"
+                android:visibility="gone"
+                app:bookmarkImageSrc="@{docModel.bookmarked}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/menuBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/menuBtn"
+                style="@style/svgDrawableStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/ripple"
+                android:padding="@dimen/_7sdp"
+                android:src="@drawable/ic_more"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/mergeCountTxt"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/empty_bg_btn_3"
+                android:gravity="center"
+                android:padding="@dimen/_3sdp"
+                android:text="@{position}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

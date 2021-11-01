@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="adModel"
+            type="itech.pdfreader.documentreader.alldocumentreader.filereader.officereader.models.AdModelClass" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/_270sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:background="@drawable/ripple"
+        app:cardElevation="@dimen/_2sdp"
+        android:elevation="@dimen/_4sdp"
+        app:cardCornerRadius="@dimen/cardRadius"
+        android:theme="@style/Theme.AppCompat.DayNight">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/pdfImgView"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/image"
+                android:scaleType="centerCrop"
+                app:setImageSrc="@{adModel.imageUri}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/pdfIconView"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginStart="@dimen/_6sdp"
+                setImageSrc="@{adModel.iconImgUri}"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:contentDescription="@string/image"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toEndOf="@+id/pdfImgView"
+                app:layout_constraintTop_toTopOf="parent" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/pdfTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:maxLines="2"
+                android:text="@{adModel.title}"
+                android:textSize="@dimen/_9ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toEndOf="@+id/pdfIconView"
+                app:layout_constraintTop_toTopOf="@+id/pdfIconView" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/pdfSizeTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:maxLines="1"
+                android:text="@{adModel.body}"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="@+id/pdfTxt"
+                app:layout_constraintStart_toStartOf="@+id/pdfIconView"
+                app:layout_constraintTop_toBottomOf="@+id/pdfIconView" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/adLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/primaryColor"
+                android:elevation="@dimen/_1sdp"
+                android:gravity="center"
+                android:paddingStart="@dimen/_2sdp"
+                android:paddingTop="@dimen/_1sdp"
+                android:paddingEnd="@dimen/_2sdp"
+                android:text="AD"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_6sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/tvActionBtnTitle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="@drawable/empty_bg_btn_4"
+                android:backgroundTint="@color/primaryColor"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                android:text="@{adModel.actionBtnTxt}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/pdfImgView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_15sdp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="@dimen/_15sdp"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:gravity="center"
+                android:text="@string/enter_page_no"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pageNoEdt"
+                style="@style/layoutStyleSecond"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/empty_bg_btn_4"
+                android:hint="@string/page_no"
+                android:lines="1"
+                android:padding="@dimen/_10sdp"
+                android:maxLength="10"
+                android:textSize="@dimen/_10ssp"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <Button
+                android:id="@+id/processBtn"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/empty_bg_btn_4"
+                android:text="@string/go"
+                android:textColor="@color/white"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pageNoEdt" />
+
+            <Button
+                android:id="@+id/cancelBtn"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:background="@drawable/empty_bg_btn_4"
+                android:text="@string/cancel"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/secondaryColor"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/processBtn"
+                app:layout_constraintEnd_toStartOf="@+id/processBtn"
+                app:layout_constraintTop_toTopOf="@+id/processBtn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

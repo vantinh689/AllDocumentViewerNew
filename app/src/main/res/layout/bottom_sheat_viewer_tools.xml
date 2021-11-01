@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="docModel"
+            type="itech.pdfreader.documentreader.alldocumentreader.filereader.officereader.models.DataModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/empty_top_curved_bg_btn"
+        style="@style/layoutStyle">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:padding="@dimen/_5sdp"
+            android:background="@drawable/empty_bg_btn_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/constraintLayout2"
+            setListItemCardViewBackground="@{docModel.name.toLowerCase()}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple"
+            app:cardCornerRadius="@dimen/cardRadius"
+            app:cardElevation="@dimen/cardElevation"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:background="@drawable/ripple"
+                android:padding="@dimen/_5sdp">
+
+                <ImageView
+                    android:id="@+id/pdfImgView"
+                    setListItemimageSrc="@{docModel.name.toLowerCase()}"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/ic_pdf_file"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/pdfTxt"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:text="@{docModel.name}"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/pdfSizeTxt"
+                    app:layout_constraintEnd_toStartOf="@+id/isLockBtn"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/pdfImgView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/pdfSizeTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{``+docModel.type.toUpperCase()+` | `+docModel.lastModifiedTime+` | `+docModel.size}"
+                    android:textSize="@dimen/_9ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/pdfTxt"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/pdfTxt"
+                    app:layout_constraintTop_toBottomOf="@+id/pdfTxt" />
+
+                <ImageView
+                    android:id="@+id/isLockBtn"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:background="@drawable/ripple"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_lock"
+                    android:visibility="gone"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:lockImageSrc="@{docModel.lock}" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+            <TextView
+                android:id="@+id/pageByPageBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple"
+                android:drawablePadding="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/page_by_page_view"
+                app:drawableLeftCompat="@drawable/ic_page_by_page" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/nightModeBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:gravity="center_vertical"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="@string/night_mode"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    app:drawableLeftCompat="@drawable/ic_icon_night_moon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/nightModeSwitch"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/nightModeSwitch"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:switchMinWidth="@dimen/_10sdp"
+                    android:layout_gravity="center"
+                    app:track="@drawable/custom_track"
+                    android:thumb="@drawable/custom_thumb"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/gotoBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple"
+                android:drawablePadding="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="@string/goto_page"
+                app:drawableLeftCompat="@drawable/ic_icon_file" />
+
+            <TextView
+                android:id="@+id/horizontalViewBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple"
+                android:drawablePadding="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="@string/horizontal_view"
+                app:drawableLeftCompat="@drawable/ic_rotate_smartphone" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

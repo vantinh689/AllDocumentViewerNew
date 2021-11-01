@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@color/shimerColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/mediaThumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@color/shimerColor"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/thumbnail"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginEnd="@dimen/activityPadding"
+            android:background="@color/shimerColor" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_10"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="@dimen/placeholderTextHeight"
+                android:background="@color/shimerColor" />
+
+            <View
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/placeholderTextHeight"
+                android:layout_marginTop="5dp"
+                android:background="@color/shimerColor" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/constraintLayout6"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/_5sdp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/ad_call_to_action">-->
+
+<!--            <View-->
+<!--                android:id="@+id/ad_app_icon"-->
+<!--                android:layout_width="@dimen/_47sdp"-->
+<!--                android:layout_height="@dimen/_47sdp"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:background="@color/shimerColor"-->
+<!--                android:contentDescription="image"-->
+<!--                android:visibility="visible"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+
+<!--            <View-->
+<!--                android:id="@+id/ad_headline"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="12dp"-->
+<!--                android:layout_marginStart="@dimen/_5sdp"-->
+<!--                android:layout_marginTop="@dimen/_5sdp"-->
+<!--                android:background="@color/shimerColor"-->
+<!--                android:lineSpacingExtra="1sp"-->
+<!--                android:singleLine="true"-->
+<!--                android:text="Audio Sharing"-->
+<!--                android:textColor="#191919"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textStyle="normal"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/ad_app_icon"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/ad_app_icon" />-->
+
+<!--            <View-->
+<!--                android:id="@+id/ad_body"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="@dimen/_10sdp"-->
+<!--                android:layout_marginStart="@dimen/_5sdp"-->
+<!--                android:background="@color/shimerColor"-->
+<!--                android:gravity="bottom"-->
+<!--                android:lineSpacingExtra="4sp"-->
+<!--                android:text="Type what you want freely"-->
+<!--                android:textColor="#aaaaaa"-->
+<!--                android:textSize="9sp"-->
+<!--                android:textStyle="normal"-->
+<!--                android:visibility="visible"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/ad_app_icon"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/ad_headline" />-->
+
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        <View-->
+<!--            android:id="@+id/ad_call_to_action"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_30sdp"-->
+<!--            android:background="@color/shimerColor"-->
+<!--            android:paddingTop="@dimen/_2sdp"-->
+<!--            android:text="install"-->
+<!--            android:textAllCaps="false"-->
+
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <View-->
+<!--            android:id="@+id/ad_media"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_marginTop="@dimen/_5sdp"-->
+<!--            android:background="@color/shimerColor"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/constraintLayout6" />-->
+
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ad_choices_container"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="end"-->
+<!--            android:orientation="horizontal"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/ad_media" />-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

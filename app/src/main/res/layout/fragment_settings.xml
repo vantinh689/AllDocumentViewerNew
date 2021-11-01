@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        tools:context=".ui.fragments.bottomnavigation.SettingsFragment">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/restorePurchaseBtn"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_15sdp"
+                android:text="Restore Purchases"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c1c1c1" />
+
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Clear Cache"-->
+            <!--                android:paddingStart="@dimen/_5sdp"-->
+            <!--                android:paddingEnd="@dimen/_5sdp"-->
+            <!--                android:paddingTop="@dimen/_15sdp"-->
+            <!--                android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                android:paddingBottom="@dimen/_15sdp"-->
+            <!--                style="@style/TextAppearance.AppCompat.Medium"-->
+            <!--                android:textStyle="bold"/>-->
+            <!--            <View-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="1dp"-->
+            <!--                android:background="#c1c1c1"/>-->
+
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Clear Browser history"-->
+            <!--                android:paddingStart="@dimen/_5sdp"-->
+            <!--                android:paddingEnd="@dimen/_5sdp"-->
+            <!--                android:paddingTop="@dimen/_15sdp"-->
+            <!--                android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                android:paddingBottom="@dimen/_15sdp"-->
+            <!--                style="@style/TextAppearance.AppCompat.Medium"-->
+            <!--                android:textStyle="bold"/>-->
+            <!--            <View-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="1dp"-->
+            <!--                android:background="#c1c1c1"/>-->
+
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Clear cookies"-->
+            <!--                android:paddingStart="@dimen/_5sdp"-->
+            <!--                android:paddingEnd="@dimen/_5sdp"-->
+            <!--                android:paddingTop="@dimen/_15sdp"-->
+            <!--                android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                android:paddingBottom="@dimen/_15sdp"-->
+            <!--                style="@style/TextAppearance.AppCompat.Medium"-->
+            <!--                android:textStyle="bold"/>-->
+            <!--            <View-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="1dp"-->
+            <!--                android:background="#c1c1c1"/>-->
+
+            <TextView
+                android:id="@+id/privacyBtn"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_15sdp"
+                android:text="Privacy policy"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c1c1c1" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/feedbackBtn"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Feedback"-->
+            <!--                android:paddingStart="@dimen/_5sdp"-->
+            <!--                android:paddingEnd="@dimen/_5sdp"-->
+            <!--                android:paddingTop="@dimen/_15sdp"-->
+            <!--                android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                android:paddingBottom="@dimen/_15sdp"-->
+            <!--                style="@style/TextAppearance.AppCompat.Medium"-->
+            <!--                android:textStyle="bold"/>-->
+            <!--            <View-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="1dp"-->
+            <!--                android:background="#c1c1c1"/>-->
+
+            <TextView
+                android:id="@+id/rateUsBtn"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_15sdp"
+                android:text="Rate us"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c1c1c1" />
+
+            <TextView
+                android:id="@+id/shareBtn"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_15sdp"
+                android:text="Share"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c1c1c1" />
+
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Help"-->
+            <!--                android:paddingStart="@dimen/_5sdp"-->
+            <!--                android:paddingEnd="@dimen/_5sdp"-->
+            <!--                android:paddingTop="@dimen/_15sdp"-->
+            <!--                android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                android:paddingBottom="@dimen/_15sdp"-->
+            <!--                style="@style/TextAppearance.AppCompat.Medium"-->
+            <!--                android:textStyle="bold"/>-->
+            <!--            <View-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="1dp"-->
+            <!--                android:background="#c1c1c1"/>-->
+
+        </LinearLayout>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/adLayout"
+            app:layout_constraintEnd_toEndOf="@+id/adLayout"
+            app:layout_constraintStart_toStartOf="@+id/adLayout"
+            app:layout_constraintTop_toTopOf="@+id/adLayout">
+
+            <include layout="@layout/shimmer_empty_screen_naive" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <FrameLayout
+            android:id="@+id/adLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

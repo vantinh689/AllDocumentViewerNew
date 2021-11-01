@@ -1,0 +1,184 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "itech.pdfreader.documentreader.alldocumentreader.filereader.officereader"
+        minSdkVersion 22
+        targetSdkVersion 30
+        vectorDrawables.useSupportLibrary = true
+        versionCode 5
+        versionName "1.2"
+        multiDexEnabled true
+        setProperty "archivesBaseName", "AllDocumentViewer-" + versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        sourceSets {
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            multiDexEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "app_id", "ca-app-pub-1077352878397226~3809340462"
+            resValue "string", "native_id", "ca-app-pub-1077352878397226/7272080936"
+            resValue "string", "inter_id", "ca-app-pub-1077352878397226/4819169801"
+            resValue "string", "admob_app_open_id", "ca-app-pub-1077352878397226/8566843129"
+            resValue "string", "admob_banner_id", ""
+            resValue "string", "pdfViewerScreenNativeId", "ca-app-pub-1077352878397226/3122944750"
+            resValue "string", "dashboardScreenNativeId", "ca-app-pub-1077352878397226/3126814187"
+            resValue "string", "pageEditorScreenNativeId", "ca-app-pub-1077352878397226/7272080936"
+            resValue "string", "searchScreenNativeId", "ca-app-pub-1077352878397226/2436549047"
+            resValue "string", "documentListNativeId", "ca-app-pub-1077352878397226/5689119108"
+            resValue "string", "splashScreenNativeId", "ca-app-pub-1077352878397226/7557013781"
+            resValue "string", "splashInterstitialId", "ca-app-pub-1077352878397226/7052589085"
+
+//            resValue "string", "app_id", "ca-app-pub-3940256099942544~3347511713"
+//            resValue "string", "native_id", "ca-app-pub-3940256099942544/2247696110"
+//            resValue "string", "inter_id", "ca-app-pub-3940256099942544/1033173712"
+//            resValue "string", "admob_app_open_id", "ca-app-pub-3940256099942544/3419835294"
+
+//            resValue "string", "admob_banner_id", ""
+//            resValue "string", "pdfViewerScreenNativeId", "ca-app-pub-3940256099942544/2247696110"
+//            resValue "string", "dashboardScreenNativeId", "ca-app-pub-3940256099942544/2247696110"
+//            resValue "string", "pageEditorScreenNativeId", "ca-app-pub-3940256099942544/2247696110"
+//            resValue "string", "searchScreenNativeId", "ca-app-pub-3940256099942544/2247696110"
+//            resValue "string", "documentListNativeId", "ca-app-pub-3940256099942544/2247696110"
+//            resValue "string", "splashScreenNativeId", "ca-app-pub-3940256099942544/2247696110"
+//            resValue "string", "splashInterstitialId", "ca-app-pub-3940256099942544/1033173712"
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            debuggable true
+            minifyEnabled true
+            multiDexEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "app_id", "ca-app-pub-3940256099942544~3347511713"
+            resValue "string", "native_id", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "inter_id", "ca-app-pub-3940256099942544/1033173712"
+            resValue "string", "admob_app_open_id", "ca-app-pub-3940256099942544/3419835294"
+            resValue "string", "admob_banner_id", ""
+            resValue "string", "pdfViewerScreenNativeId", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "dashboardScreenNativeId", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "pageEditorScreenNativeId", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "searchScreenNativeId", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "documentListNativeId", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "splashScreenNativeId", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "splashInterstitialId", "ca-app-pub-3940256099942544/1033173712"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation "androidx.fragment:fragment-ktx:1.3.6"
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-process:2.3.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //navigation controls
+    def navigation_version = '2.3.5'
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
+    //koin
+    def koin_version = '2.1.5'
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    implementation "org.koin:koin-androidx-fragment:$koin_version"
+
+    //coroutines
+    def coroutines_version = "1.4.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    //lifecycle
+    def lifecycle_version = "2.3.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    //room
+    def room_version = "2.3.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    //firebase
+    implementation 'com.google.firebase:firebase-analytics-ktx:19.0.1'
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.1'
+    implementation 'com.google.firebase:firebase-messaging-ktx:22.0.0'
+    implementation 'com.google.firebase:firebase-config-ktx:21.0.1'
+
+    // pdf viewer
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    implementation 'com.nimbusds:nimbus-jose-jwt:4.23'
+    implementation 'com.madgag.spongycastle:core:1.54.0.0'
+    implementation 'com.madgag.spongycastle:prov:1.54.0.0'
+    implementation 'com.madgag.spongycastle:pkix:1.54.0.0'
+    implementation 'com.madgag.spongycastle:pg:1.54.0.0'
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.54'
+
+
+    // Google Play
+    implementation 'com.android.billingclient:billing:3.0.3'//Billing Library.
+    implementation 'com.google.android.play:core:1.10.0'//In app update
+    implementation 'com.google.android.gms:play-services-ads:20.2.0'//ad mob
+
+    //Utils
+    implementation "com.github.skydoves:powermenu:2.1.9" //dialogs
+    implementation 'com.facebook.shimmer:shimmer:0.5.0@aar' //shimmer
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'//progress loader
+    implementation 'me.zhanghai.android.materialratingbar:library:1.4.0'//rating bar
+    implementation 'com.jakewharton.timber:timber:4.7.1'//timber
+    implementation 'com.karumi:dexter:6.2.1'// Dexter runtime permissions
+    implementation 'com.nabinbhandari.android:permissions:3.8'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.github.bumptech.glide:glide:4.12.0' //glide
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'//sizes
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'//text sizes
+    implementation project(path: ':office')
+
+    //for pdf editor
+    implementation 'com.itextpdf:itextpdf:5.5.13'
+    //facebook Ads
+    //implementation "com.facebook.android:audience-network-sdk:6.2.0"
+}

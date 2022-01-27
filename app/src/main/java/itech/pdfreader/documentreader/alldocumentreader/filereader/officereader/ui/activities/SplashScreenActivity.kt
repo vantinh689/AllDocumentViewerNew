@@ -40,6 +40,7 @@ class SplashScreenActivity : BaseActivity() {
 
     private fun initApplication() {
         hideStatusBar()
+
 //        billingViewModel.subSkuDetailsListLiveData.observe(this, { skuList ->
 //            if (!skuList.isNullOrEmpty()) {
 //                if (!skuList[0].canPurchase || !skuList[1].canPurchase) {
